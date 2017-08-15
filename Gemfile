@@ -41,7 +41,10 @@ group :development do
   gem 'listen', '~> 3.0.5'
 end
 
-
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'rails-controller-testing'
+end
 
 
 # # Use sqlite3 as the database for Active Record
