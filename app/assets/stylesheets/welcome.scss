@@ -1,3 +1,13 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.social-btn{
+  color: white;
+  background-color: #3f8dba;
+	position: relative;
+	border-radius: 5px;
+	padding: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  letter-spacing: 2px;
+}
