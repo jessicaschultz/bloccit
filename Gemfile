@@ -8,7 +8,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 gem 'bootstrap-sass'
-gem 'sqlite3'
 
 group :production do
   # Use pg as the production database for Active Record
@@ -18,6 +17,8 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
+  gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :development, :test do
