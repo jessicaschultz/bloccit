@@ -8,10 +8,10 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 gem 'bootstrap-sass'
-gem 'pg', '0.21.0'
 
 group :production do
   # Use pg as the production database for Active Record
+  gem 'pg', '0.21.0'
   gem 'rails_12factor'
 end
 
