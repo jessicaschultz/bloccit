@@ -27,6 +27,8 @@ group :development, :test do
   gem 'shoulda'
 end
 
+#faker gem for generating random data
+gem 'faker', '~> 1.6', '>= 1.6.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
