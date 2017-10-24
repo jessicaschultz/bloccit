@@ -39,6 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'localhost' }
 
   #added to prevent test error possibly caused from rails_helper.rb line 27
   #https://stackoverflow.com/questions/44423828/why-do-i-need-to-migrate-the-test-database-in-rails
