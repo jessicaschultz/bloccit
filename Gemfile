@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'sqlite3'
   gem 'shoulda'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 #faker gem for generating random data
