@@ -10,17 +10,66 @@
       <% end %>
       <div class="media-body">
         <h2 class="media-heading"><%= @user.name %></h2>
+        <%= @user.email %> <br>
         <small>
           <%= pluralize(@user.posts.count, 'post') %>,
-          <%= pluralize(@user.comments.count, 'comment') %>
+          <%= pluralize(@user.comments.count, 'comment') %>,
+          <%= pluralize(@user.favorites.count, 'favorites') %>
         </small>
       </div>
     </div>
   </div>
 </div>
 
-<h2>Posts</h2>
-<%= render @user.posts %>
+<% if @user.posts.present? %>
+  <div class="row media-body">
+    <div class="col-md-6">
+       <h3>Posts</h3>
+       <%= render @user.posts %>
+    </div>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+    <div class="col-md-6">
+       <h3>Comments</h3>
+       <%= render @user.comments %>
+    </div>
+<% else %>
+    <div class="col-md-8">
+      <%= "#{@user.name} does not have any posts." %>
+    </div>
+  </div>
+<% end %>
+
+<% if @user.favorites.present? %>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Favorites</h3>
+     </div>
+   </div>
+
+   <div class="row media-body">
+     <% @user.favorites.each do |favorite| %>
+       <div class="col-md-12">
+         <div class="col-md-2">
+           <small>
+             <%= image_tag avatar_url(@user), class: 'media-object' %>
+             <%= pluralize("#{favorite.post.points} ", 'votes') %>,
+             <%= pluralize("#{favorite.post.comments.count} ", 'comment') %>
+           </small>
+         </div>
+
+         <div class="col-md-10">
+           <h4>
+             <%= link_to "#{favorite.post.title} " %>
+           </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% else %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= "#{@user.name} does not have any favorites." %>
+    </div>
+  </div>
+<% end %>

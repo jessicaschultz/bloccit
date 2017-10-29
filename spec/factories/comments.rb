@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :comment do
     body RandomData.random_paragraph
-    topic
+    post
     user
+    created_at
     rank 0.0
   end
 end
